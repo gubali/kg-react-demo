@@ -1,1 +1,1 @@
-# kg-react-demo
+# KG youtube tutorial and hands on
