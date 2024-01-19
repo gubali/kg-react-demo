@@ -12,4 +12,9 @@
   span:hover {
     margin-left: 10px;
   }
-  
+  .floatas{
+    margin-right: 10% !important;
+}
+.btn{
+  float: right !important;
+}
