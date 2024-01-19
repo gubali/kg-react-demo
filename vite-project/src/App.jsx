@@ -1,16 +1,17 @@
 import Hello from "./Hello";
 import RandomKey from "./Random";
-import KgButton from "./kgButton";
-import Calculator from "./Calc][-oo96876ee63433333333666666666226877later";
+import KgButton from "./KgButton";
+import Calculator from "./Calculater";
 import CurrentTime from "./component/CurrentTime";
 import FoodItems from "./component/FoodItems";
 import Header from "./component/Header";
 import MiniCalculator from "./component/MiniCalculator";
+import Container from "./component/Container";
 function App() {
   let foodItems = ["Dal", "Pulse", "Green Pea", "Salad"];
   const heading = "Welcome to React App";
   return (
-    <>
+    <Container>
       {/* <h2>Welcome first React App!</h2> */}
       <Header headingText={heading}></Header>
       <KgButton></KgButton>
@@ -20,7 +21,9 @@ function App() {
       <CurrentTime></CurrentTime>
       <FoodItems items={foodItems}></FoodItems>
       <MiniCalculator></MiniCalculator>
-      </>
+      <hr />
+</Container>
+      
   );
 }
 
