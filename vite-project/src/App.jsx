@@ -11,6 +11,7 @@ function App() {
   let foodItems = ["Dal", "Pulse", "Green Pea", "Salad"];
   const heading = "Welcome to React App";
   return (
+    <>
     <Container>
       {/* <h2>Welcome first React App!</h2> */}
       <Header headingText={heading}></Header>
@@ -23,7 +24,11 @@ function App() {
       <MiniCalculator></MiniCalculator>
       <hr />
 </Container>
-      
+<hr />
+{/* <Container>
+  <p>Testing the container, loreipsum doller amet set</p>
+</Container> */}
+      </>
   );
 }
 
