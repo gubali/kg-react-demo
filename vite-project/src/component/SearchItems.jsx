@@ -1,7 +1,10 @@
 const SearchItems = ()=>{
+    const handleEvent = (event)=>{
+        alert((event.target.value))
+    }
     return <>
       <input type="text" className="form-control mb-2"
-       placeholder="Serach items.." onChange={(e)=>alert((e.target.value))}></input>
+       placeholder="Serach items.." onChange={handleEvent}></input>
     </>
 }
 
