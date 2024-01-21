@@ -1,12 +1,14 @@
 import styles from './Items.module.css'
 
 const Items = (prop) => {
-  console.log(prop);
+  const getFoodItems = (prop)=>{
+   alert(prop.foodItem);
+  }
   return <>
     <li className={`${styles['list-ab']} list-group-item`} key={prop.foodItem}>
       <span className={`${styles.floatas}`}>{prop.foodItem}</span>
       <button type="button" id="result"
-             className={`${styles['btn']} btn btn-info`} onClick={()=>alert('Click event:'+ " " + prop.foodItem)}>Buy</button>
+             className={`${styles['btn']} btn btn-info`} onClick={getFoodItems}>Buy</button>
     </li>
   </>
 }
