@@ -8,13 +8,16 @@ import Header from "./component/Header";
 import MiniCalculator from "./component/MiniCalculator";
 import Container from "./component/Container";
 import SearchItems from './component/SearchItems'
+import { useState } from "react";
 function App() {
   let foodItems = ["Dal", "Pulse", "Green Pea", "Salad"];
   const heading = "Welcome to React App";
-  let showText = "Welcome to food Cafe!"
+  let textStateArr = useState('Welcome to food Cafe!');
+  let textDispaly = textStateArr[0];
+  let stateMethod = textStateArr[1];
   const handleEvent = (event)=>{
-    alert(event.target.value);
-    showText = event.target.value;
+    //alert(event.target.value);
+    stateMethod(event.target.value);
 }
   return (
     <>
@@ -27,7 +30,7 @@ function App() {
       <Calculator></Calculator>
       <CurrentTime></CurrentTime>
       <SearchItems handleEvent={handleEvent}></SearchItems>
-      {showText}
+      {textStateArr}
       <FoodItems items={foodItems}></FoodItems>
       <MiniCalculator></MiniCalculator>
       <hr />
