@@ -1,16 +1,16 @@
 import styles from './Items.module.css'
 
-const Items = (prop) => {
-  const getFoodItems = (prop)=>{
-   alert(prop)
+const Items = ({foodItem, handleEvent}) => {
+  const getFoodItems = (foodItem)=>{
+   alert(foodItem)
   }
-  return <>
-    <li className={`${styles['list-ab']} list-group-item`} key={prop.foodItem}>
-      <span className={`${styles.floatas}`}>{prop.foodItem}</span>
+  return (
+    <li className={`${styles['list-ab']} list-group-item`} key={foodItem}>
+      <span className={`${styles.floatas}`}>{foodItem}</span>
       <button type="button" id="result"
-             className={`${styles['btn']} btn btn-info`} onClick={()=>getFoodItems(prop.foodItem)}>Buy</button>
+             className={`${styles['btn']} btn btn-info`} onClick={getFoodItems}>Buy</button>
     </li>
-  </>
-}
+  );
+};
 //478197608912
 export default Items;
