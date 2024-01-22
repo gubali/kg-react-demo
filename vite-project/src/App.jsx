@@ -15,6 +15,7 @@ function App() {
   let textStateArr = useState('Welcome to food Cafe!');
   let textDispaly = textStateArr[0];
   let stateMethod = textStateArr[1];
+  let flag = true;
   const handleEvent = (event)=>{
     //alert(event.target.value);
     stateMethod(event.target.value);
@@ -31,7 +32,8 @@ function App() {
       <CurrentTime></CurrentTime>
       <SearchItems handleEvent={handleEvent}></SearchItems>
       {textStateArr}
-      <FoodItems items={foodItems}></FoodItems>
+      {flag === false ?  <FoodItems items={foodItems}></FoodItems> :  'Resource not found!'}
+      {/* <FoodItems items={foodItems}></FoodItems> */}
       <MiniCalculator></MiniCalculator>
       <hr />
 </Container>
