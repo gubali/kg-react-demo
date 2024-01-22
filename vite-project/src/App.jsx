@@ -12,9 +12,12 @@ import { useState } from "react";
 function App() {
   let foodItems = ["Dal", "Pulse", "Green Pea", "Salad"];
   const heading = "Welcome to React App";
-  let textStateArr = useState('Welcome to food Cafe!');
-  let textDispaly = textStateArr[0];
-  let stateMethod = textStateArr[1];
+  //use state
+  // let textStateArr = useState('Welcome to food Cafe!');
+  // let textDispaly = textStateArr[0];
+  // let stateMethod = textStateArr[1];
+  //new  type if declaring use state using destructure
+  let {textDispaly1, stateMethod1} = useState('Destructure way: Welcome to food Cafe!');
   let flag = true;
   const handleEvent = (event)=>{
     //alert(event.target.value);
@@ -31,8 +34,8 @@ function App() {
       <Calculator></Calculator>
       <CurrentTime></CurrentTime>
       <SearchItems handleEvent={handleEvent}></SearchItems>
-      {textStateArr}
-      {flag === false ?  <FoodItems items={foodItems}></FoodItems> :  'Resource not found!'}
+      {textDispaly}
+      {flag === true ?  <FoodItems items={foodItems}></FoodItems> :  'Resource not found!'}
       {/* <FoodItems items={foodItems}></FoodItems> */}
       <MiniCalculator></MiniCalculator>
       <hr />
