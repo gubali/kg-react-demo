@@ -11,6 +11,9 @@ import SearchItems from './component/SearchItems'
 function App() {
   let foodItems = ["Dal", "Pulse", "Green Pea", "Salad"];
   const heading = "Welcome to React App";
+  const handleEvent = (event)=>{
+    alert((event.target.value))
+}
   return (
     <>
     <Container>
@@ -21,7 +24,7 @@ function App() {
       <RandomKey></RandomKey>
       <Calculator></Calculator>
       <CurrentTime></CurrentTime>
-      <SearchItems></SearchItems>
+      <SearchItems handleEvent={handleEvent}></SearchItems>
       <FoodItems items={foodItems}></FoodItems>
       <MiniCalculator></MiniCalculator>
       <hr />
