@@ -7,7 +7,7 @@ const Items = ({foodItem,bool, handleBuyEvent}) => {
   // }
   return (
     <ul className=' list-group'>
-    <li className={`${styles['list-ab']} list-group-item  mb-1 ${bool && active}`} key={foodItem}>
+    <li className={`${styles['list-ab']} list-group-item  mb-1 ${bool && 'active'}`} key={foodItem}>
       <span className={`${styles.floatas}` } >{foodItem}</span>
       <button type="button" id="result"
              className={`${styles['btn']} btn btn-info`} onClick={handleBuyEvent}>Buy</button>
