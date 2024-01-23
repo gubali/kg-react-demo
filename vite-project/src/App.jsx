@@ -18,12 +18,13 @@ function App() {
   // let stateMethod = textStateArr[1];
   //new  type if declaring use state using destructure
   let [textDispaly1, stateMethod1] = useState('Destructure way: Welcome to food Cafe!');
-  let [stateFoodList, setFoodList] = useState(["Paratha", "Dal", "Pulse", "Green Pea", "Salad", "Roti"])
+  let [stateFoodList, setFoodList] = useState(["Paratha", "Dal", "Pulse"])
   let flag = true;
   const handleEvent = (event)=>{
     if(event.key ==='Enter'){
       let newFodItems = event.target.value;
       setFoodList([...stateFoodList, newFodItems]); //spread operator
+      newFodItems = null;
      //alert(newFodItems);
     }
     //alert(event.target.value);
