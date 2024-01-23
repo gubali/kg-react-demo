@@ -17,11 +17,11 @@ function App() {
   // let textDispaly = textStateArr[0];
   // let stateMethod = textStateArr[1];
   //new  type if declaring use state using destructure
-  let {textDispaly1, stateMethod1} = useState('Destructure way: Welcome to food Cafe!');
+  let [textDispaly1, stateMethod1] = useState('Destructure way: Welcome to food Cafe!');
   let flag = true;
   const handleEvent = (event)=>{
     //alert(event.target.value);
-    stateMethod(event.target.value);
+    stateMethod1(event.target.value);
 }
   return (
     <>
@@ -33,8 +33,8 @@ function App() {
       <RandomKey></RandomKey>
       <Calculator></Calculator>
       <CurrentTime></CurrentTime>
-      <SearchItems handleEvent={handleEvent}></SearchItems>
-      {textDispaly}
+      <SearchItems handleDownEvent={handleEvent}></SearchItems>
+      {textDispaly1}
       {flag === true ?  <FoodItems items={foodItems}></FoodItems> :  'Resource not found!'}
       {/* <FoodItems items={foodItems}></FoodItems> */}
       <MiniCalculator></MiniCalculator>
