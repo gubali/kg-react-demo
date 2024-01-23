@@ -23,7 +23,7 @@ function App() {
   const handleEvent = (event)=>{
     if(event.key ==='Enter'){
       let newFodItems = event.target.value;
-      setFoodList([...stateFoodList, newFodItems]);
+      setFoodList([...stateFoodList, newFodItems]); //spread operator
      //alert(newFodItems);
     }
     //alert(event.target.value);
