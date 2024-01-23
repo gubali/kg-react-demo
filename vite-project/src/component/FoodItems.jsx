@@ -2,6 +2,7 @@ import Items from "./Items";
 const FoodItems = ({items}) => {
   // let foodItems = ["Dal", "Pulse", "Green Pea", "Salad"];
   const getFoodItems = (items)=>{
+    
     alert("Clicked: " + items)
    }
   return (

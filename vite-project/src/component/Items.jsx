@@ -1,15 +1,18 @@
 import styles from './Items.module.css'
 
 const Items = ({foodItem, handleBuyEvent}) => {
+  let as = true;
   // const getFoodItems = (foodItem)=>{
   //  alert("Clicked" + foodItem)
   // }
   return (
-    <li className={`${styles['list-ab']} list-group-item`} key={foodItem}>
-      <span className={`${styles.floatas}`}>{foodItem}</span>
+    <ul className=' list-group'>
+    <li className={`${styles['list-ab']} list-group-item active mb-1`} key={foodItem}>
+      <span className={`${styles.floatas}` } >{foodItem}</span>
       <button type="button" id="result"
              className={`${styles['btn']} btn btn-info`} onClick={handleBuyEvent}>Buy</button>
     </li>
+    </ul>
   );
 };
 //478197608912
