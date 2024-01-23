@@ -1,7 +1,8 @@
 import styles from './Items.module.css'
 
-const Items = ({foodItem,bool, handleBuyEvent}) => {
+const Items = ({foodItem,bool, handleBuyEvent, txtBtn}) => {
   let as = true;
+
   // const getFoodItems = (foodItem)=>{
   //  alert("Clicked" + foodItem)
   // }
