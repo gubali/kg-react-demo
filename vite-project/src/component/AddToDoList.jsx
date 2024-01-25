@@ -3,25 +3,26 @@ function AddToDoList() {
       <form className="row">
         <div className="col-2"></div>
         <div className="col-4">
-          <label htmlFor="staticEmail2" className="visually-hidden">
+          {/* <label htmlFor="staticEmail2" className="visually-hidden">
             Email
-          </label>
-          <input type="text" className="form-control" id="staticEmail2"></input>
+          </label> */}
+          <input type="text" className="form-control"
+           id="productName" placeholder="Please type productname..."></input>
         </div>
         <div className="col-4">
-          <label htmlFor="inputPassword2" className="visually-hidden">
+          {/* <label htmlFor="inputPassword2" className="visually-hidden">
             Password
-          </label>
+          </label> */}
           <input
             type="date"
             className="form-control"
-            id="inputPassword2"
-            placeholder="Password"
+            id="purchasedDate"
+            
           ></input>
         </div>
         <div className="col-2">
           <button type="submit" className="btn btn-primary mb-3">
-            Add
+            Add to list
           </button>
         </div>
       </form>
