@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 function AddToDoList() {
+  let [addtoList, setListName] = useState();
+  let [addDateToList, setDateToList] = useState();
   return (
       <form className="row">
       
@@ -6,7 +10,7 @@ function AddToDoList() {
           {/* <label htmlFor="staticEmail2" className="visually-hidden">
             Email
           </label> */}
-          <input type="text" className="form-control"
+          <input type="text" className="form-control" value={addtoList}
            id="productName" placeholder="Please type productname..."></input>
         </div>
         <div className="col-lg-4">
