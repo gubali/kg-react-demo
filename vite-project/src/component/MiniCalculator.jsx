@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 let MiniCalculator = () => {
-  let [getCalInputText, setCalInputText] = useState(['Plase Press key ...'])
+  let [getCalInputText, setCalInputText] = useState("")
   const btnList = [
     'C',
     '1',
@@ -21,9 +21,13 @@ let MiniCalculator = () => {
     '0',
     '.'
   ];
-  let calBtnClick = (item)=>{
-    let newItem = item;
-    setCalInputText(newItem);
+  let calBtnClick = (item) => {
+    if (item === 'c') { } else if (item === '=') { }
+    else {
+      let newItem = getCalInputText + item;
+      setCalInputText(newItem);
+    }
+  
   }
   return (
     <div className="container">
@@ -34,9 +38,9 @@ let MiniCalculator = () => {
           <input type="text" id="result" readOnly className="form-control" value={getCalInputText}></input>
           <div className="btn-container">
             {btnList.map(item => <button type="button" id="result"
-             className="btn btn-danger my-1 mx-1" key={item}
-             onClick={()=>calBtnClick(item)}
-             >{item}</button>)}
+              className="btn btn-danger my-1 mx-1" key={item}
+              onClick={() => calBtnClick(item)}
+            >{item}</button>)}
           </div>
         </div>
         <div className="col-lg-2 col-xs-2"></div>
