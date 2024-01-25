@@ -31,7 +31,7 @@ let MiniCalculator = () => {
       <div className="row">
         <div className="col-lg-5 col-xs-5"></div>
         <div className="col-lg-2 col-xs-2">
-          <input type="text" id="result" className="form-control" value={getCalInputText}></input>
+          <input type="text" id="result" readOnly className="form-control" value={getCalInputText}></input>
           <div className="btn-container">
             {btnList.map(item => <button type="button" id="result"
              className="btn btn-danger my-1 mx-1" key={item}
