@@ -35,7 +35,8 @@ let MiniCalculator = () => {
 
   }
   let addClass = (item)=>{
-    return item === 'C' ? 'btn btn-danger my-1 mx-1' : 'btn btn-primary my-1 mx-1'
+    return item === 'C' ? 'btn btn-danger my-1 mx-1' : 'btn btn-primary my-1 mx-1' 
+    && item === '=' ? 'btn btn-success my-1 mx-1' : "btn btn-primary my-1 mx-1";
   }
   return (
     <div className="container">
