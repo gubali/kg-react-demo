@@ -34,6 +34,9 @@ let MiniCalculator = () => {
     }
 
   }
+  let addClass = (item)=>{
+    return item === 'C' ? 'btn btn-danger my-1 mx-1' : 'btn btn-primary my-1 mx-1'
+  }
   return (
     <div className="container">
       <h3 className="text-danger mb-3 mt-3">Mobile Calculater</h3>
@@ -44,7 +47,8 @@ let MiniCalculator = () => {
           value={getCalInputText}></input>
           <div className="btn-container">
             {btnList.map(item => <button type="button" id="result"
-              className="btn btn-danger my-1 mx-1" key={item}
+              // className="btn btn-danger my-1 mx-1" key={item}
+              className={addClass(item) } key={item}
               onClick={() => calBtnClick(item)}
             >{item}</button>)}
           </div>
