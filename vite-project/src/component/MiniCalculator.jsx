@@ -22,7 +22,7 @@ let MiniCalculator = () => {
     '.'
   ];
   let calBtnClick = (item)=>{
-    let newItem = items;
+    let newItem = item;
     setCalInputText(newItem);
   }
   return (
@@ -35,7 +35,7 @@ let MiniCalculator = () => {
           <div className="btn-container">
             {btnList.map(item => <button type="button" id="result"
              className="btn btn-danger my-1 mx-1" key={item}
-             onClick={calBtnClick(item)}
+             onClick={()=>calBtnClick(item)}
              >{item}</button>)}
           </div>
         </div>
