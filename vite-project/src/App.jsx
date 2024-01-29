@@ -39,7 +39,8 @@ const initialToDoItems = [
 
 const [addTodoitem, setAddTodoTem] = useState(initialToDoItems);
 const handleAddNewItems = (pName, pDate) =>{
-  setAddTodoTem(...initialToDoItems, pName, pDate)
+  const newCreatedArray = [...initialToDoItems, {pName:pName, pDate:pDate}];
+  setAddTodoTem(newCreatedArray);
 }
 
   return (
