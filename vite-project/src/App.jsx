@@ -38,6 +38,7 @@ const initialToDoItems = [
 ];
 
 const [addTodoitem, setAddTodoTem] = useState(initialToDoItems);
+
   return (
     <>
     <Container>
@@ -48,7 +49,7 @@ const [addTodoitem, setAddTodoTem] = useState(initialToDoItems);
       <RandomKey></RandomKey>
       <h3>Add Purchased items to list...</h3>
       <AddToDoList></AddToDoList>
-      <ToDoItemsList todoItems={addTodoitem}></ToDoItemsList>
+      <ToDoItemsList todoItems={addTodoitem} />
       <CurrentTime></CurrentTime>
       <SearchItems handleDownEvent={handleEvent}></SearchItems>
       {textDispaly1}
