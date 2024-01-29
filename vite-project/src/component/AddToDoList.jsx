@@ -1,10 +1,13 @@
 import { useState } from "react";
 
 function AddToDoList({onNewItem}) {
-  let [addProducttoList, setProducttoList] = useState("");
-  let [addDateToList, setDateToList] = useState("");
-  let addListToTable = ()=>{
-    
+  let [addProducttoList, setProducttoList] = useState();
+  let [addDateToList, setDateToList] = useState();
+  const handleNameChange = (event)=>{
+    setProducttoList(event.target.value);
+  }
+  const handleDateChange = (event)=>{
+    setDateToList(event.target.value);
   }
   return (
       <form className="row">
@@ -13,7 +16,7 @@ function AddToDoList({onNewItem}) {
           {/* <label htmlFor="staticEmail2" className="visually-hidden">
             Email
           </label> */}
-          <input type="text" className="form-control" value={addProducttoList}
+          <input type="text" className="form-control" onChange={handleNameChange}
            id="productName" placeholder="Please type productname..."></input>
         </div>
         <div className="col-lg-4">
@@ -24,7 +27,7 @@ function AddToDoList({onNewItem}) {
             type="date"
             className="form-control"
             id="purchasedDate"
-            value={addDateToList}
+            onChange={handleDateChange}
             
           ></input>
         </div>
