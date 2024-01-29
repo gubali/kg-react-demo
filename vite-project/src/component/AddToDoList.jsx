@@ -37,7 +37,7 @@ function AddToDoList({onNewItem}) {
           ></input>
         </div>
         <div className="col-lg-2">
-          <button type="submit" className="mt-2 btn btn-primary mb-3" onClick={handleAddButtonEvent}>
+          <button type="button" className="mt-2 btn btn-primary mb-3" onClick={handleAddButtonEvent}>
             Add to list
           </button>
         </div>

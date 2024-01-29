@@ -36,10 +36,10 @@ const initialToDoItems = [
   { pName: "Egg12", pDate: "10/12/2024" },
   { pName: "Parle", pDate: "12/2/2021" }
 ];
-
 const [addTodoitem, setAddTodoTem] = useState(initialToDoItems);
-const handleAddNewItems = (pName, pDate) =>{
-  const newCreatedArray = [...initialToDoItems, {pName:pName, pDate:pDate}];
+const handleAddNewItems = (a, b) =>{
+  alert(`${a}, ${b}`);
+  const newCreatedArray = [...initialToDoItems, {pName:a, pDate:b}];
   setAddTodoTem(newCreatedArray);
 }
 
@@ -50,9 +50,10 @@ const handleAddNewItems = (pName, pDate) =>{
       <Header headingText={heading}></Header>
       <KgButton></KgButton>
       <Hello></Hello>
+      
       <RandomKey></RandomKey>
       <h3>Add Purchased items to list...</h3>
-      <AddToDoList onNewItem={handleAddNewItems}></AddToDoList>
+      <AddToDoList onNewItem={handleAddNewItems} />
       <ToDoItemsList todoItems={addTodoitem} />
       <CurrentTime></CurrentTime>
       <SearchItems handleDownEvent={handleEvent}></SearchItems>
