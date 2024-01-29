@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddToDoList() {
+function AddToDoList({handleAddToListEvent}) {
   let [addProducttoList, setProducttoList] = useState();
   let [addDateToList, setDateToList] = useState();
   let addListToTable = ()=>{

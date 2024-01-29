@@ -1,7 +1,8 @@
 import Hello from "./Hello";
 import RandomKey from "./Random";
 import KgButton from "./KgButton";
-import Calculator from "./Calculater";
+import AddToDoList from "./component/AddToDoList";
+import ToDoItemsList from "./component/ToDoItemsList";
 import CurrentTime from "./component/CurrentTime";
 import FoodItems from "./component/FoodItems";
 import Header from "./component/Header";
@@ -30,6 +31,11 @@ function App() {
     //alert(event.target.value);
     stateMethod1(event.target.value);
 }
+const toDoItems = [
+  { name: "Milk", dueDate: "12/12/2024" },
+  { name: "Egg", dueDate: "10/12/2024" },
+  { name: "Parle", dueDate: "12/2/2021" }
+];
   return (
     <>
     <Container>
@@ -38,7 +44,9 @@ function App() {
       <KgButton></KgButton>
       <Hello></Hello>
       <RandomKey></RandomKey>
-      <Calculator></Calculator>
+      <h3>Add Purchased items to list...</h3>
+      <AddToDoList></AddToDoList>
+      <ToDoItemsList todoItems={toDoItems}></ToDoItemsList>
       <CurrentTime></CurrentTime>
       <SearchItems handleDownEvent={handleEvent}></SearchItems>
       {textDispaly1}
