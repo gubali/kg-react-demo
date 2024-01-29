@@ -39,7 +39,7 @@ const initialToDoItems = [
 
 const [addTodoitem, setAddTodoTem] = useState(initialToDoItems);
 const handleAddNewItems = (pName, pDate) =>{
-alert(`new Items added ${pName} ${pDate}`);
+  setAddTodoTem(...initialToDoItems, pName, pDate)
 }
 
   return (

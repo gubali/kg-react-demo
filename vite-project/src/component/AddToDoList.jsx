@@ -10,7 +10,9 @@ function AddToDoList({onNewItem}) {
     setDateToList(event.target.value);
   }
   const handleAddButtonEvent = ()=>{
-    onNewItem(addProducttoList, addDateToList)
+    onNewItem(addProducttoList, addDateToList);
+    setProducttoList("");
+    setDateToList("");
   }
   return (
       <form className="row">
@@ -20,7 +22,7 @@ function AddToDoList({onNewItem}) {
             Email
           </label> */}
           <input type="text" className="form-control" onChange={handleNameChange}
-           id="productName" placeholder="Please type productname..."></input>
+           id="productName" value={addProducttoList} placeholder="Please type productname..."></input>
         </div>
         <div className="col-lg-4">
           {/* <label htmlFor="inputPassword2" className="visually-hidden">
@@ -31,7 +33,7 @@ function AddToDoList({onNewItem}) {
             className="form-control"
             id="purchasedDate"
             onChange={handleDateChange}
-            
+            value={addDateToList}
           ></input>
         </div>
         <div className="col-lg-2">
