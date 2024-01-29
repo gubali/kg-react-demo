@@ -9,6 +9,9 @@ function AddToDoList({onNewItem}) {
   const handleDateChange = (event)=>{
     setDateToList(event.target.value);
   }
+  const handleAddButtonEvent = ()=>{
+    onNewItem(addProducttoList, addDateToList)
+  }
   return (
       <form className="row">
       
@@ -32,7 +35,7 @@ function AddToDoList({onNewItem}) {
           ></input>
         </div>
         <div className="col-lg-2">
-          <button type="submit" className="mt-2 btn btn-primary mb-3" onClick={()=>onNewItem(addProducttoList, addDateToList)}>
+          <button type="submit" className="mt-2 btn btn-primary mb-3" onClick={handleAddButtonEvent}>
             Add to list
           </button>
         </div>
