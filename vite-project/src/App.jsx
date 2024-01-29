@@ -32,9 +32,9 @@ function App() {
     stateMethod1(event.target.value);
 }
 const initialToDoItems = [
-  { name: "Milk12", dueDate: "12/12/2024" },
-  { name: "Egg12", dueDate: "10/12/2024" },
-  { name: "Parle", dueDate: "12/2/2021" }
+  { pName: "Milk12", pDate: "12/12/2024" },
+  { pName: "Egg12", pDate: "10/12/2024" },
+  { pName: "Parle", pDate: "12/2/2021" }
 ];
 
 const [addTodoitem, setAddTodoTem] = useState(initialToDoItems);

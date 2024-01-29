@@ -3,7 +3,7 @@ const ToDoItemsList = ({ todoItems }) => {
   return (
     <>
       {todoItems.map((item) => (
-        <ToDoItem todoName={item.name}key={item.name} todoDate={item.dueDate}></ToDoItem>
+        <ToDoItem todoName={item.pName} key={item.pName} todoDate={item.pDate}></ToDoItem>
       ))}
     </>
   );
