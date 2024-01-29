@@ -10,6 +10,7 @@ import MiniCalculator from "./component/MiniCalculator";
 import Container from "./component/Container";
 import SearchItems from './component/SearchItems'
 import { useState } from "react";
+import TodoError from "./component/TodoError";
 function App() {
   // let foodItems = ["Dal", "Pulse", "Green Pea", "Salad"];
   const heading = "Welcome to React App";
@@ -54,6 +55,7 @@ const handleAddNewItems = (a, b) =>{
       <RandomKey></RandomKey>
       <h3>Add Purchased items to list...</h3>
       <AddToDoList onNewItem={handleAddNewItems} />
+      <TodoError></TodoError>
       <ToDoItemsList todoItems={addTodoitem} />
       <CurrentTime></CurrentTime>
       <SearchItems handleDownEvent={handleEvent}></SearchItems>
