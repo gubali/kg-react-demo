@@ -31,11 +31,13 @@ function App() {
     //alert(event.target.value);
     stateMethod1(event.target.value);
 }
-const toDoItems = [
-  { name: "Milk", dueDate: "12/12/2024" },
-  { name: "Egg", dueDate: "10/12/2024" },
+const initialToDoItems = [
+  { name: "Milk12", dueDate: "12/12/2024" },
+  { name: "Egg12", dueDate: "10/12/2024" },
   { name: "Parle", dueDate: "12/2/2021" }
 ];
+
+const [addTodoitem, setAddTodoTem] = useState(initialToDoItems);
   return (
     <>
     <Container>
@@ -46,7 +48,7 @@ const toDoItems = [
       <RandomKey></RandomKey>
       <h3>Add Purchased items to list...</h3>
       <AddToDoList></AddToDoList>
-      <ToDoItemsList todoItems={toDoItems}></ToDoItemsList>
+      <ToDoItemsList todoItems={addTodoitem}></ToDoItemsList>
       <CurrentTime></CurrentTime>
       <SearchItems handleDownEvent={handleEvent}></SearchItems>
       {textDispaly1}
