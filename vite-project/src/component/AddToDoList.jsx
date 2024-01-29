@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddToDoList({handleAddToListEvent}) {
+function AddToDoList({onNewItem}) {
   let [addProducttoList, setProducttoList] = useState();
   let [addDateToList, setDateToList] = useState();
   let addListToTable = ()=>{
@@ -29,7 +29,7 @@ function AddToDoList({handleAddToListEvent}) {
           ></input>
         </div>
         <div className="col-lg-2">
-          <button type="submit" className="mt-2 btn btn-primary mb-3" onClick={()=>addListToTable()}>
+          <button type="submit" className="mt-2 btn btn-primary mb-3" onClick={()=>onNewItem('a', 'b')}>
             Add to list
           </button>
         </div>

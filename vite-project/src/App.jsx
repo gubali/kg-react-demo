@@ -38,6 +38,9 @@ const initialToDoItems = [
 ];
 
 const [addTodoitem, setAddTodoTem] = useState(initialToDoItems);
+const handleAddNewItems = (pName, pDate) =>{
+alert(`new Items added ${pName} ${pDate}`);
+}
 
   return (
     <>
@@ -48,7 +51,7 @@ const [addTodoitem, setAddTodoTem] = useState(initialToDoItems);
       <Hello></Hello>
       <RandomKey></RandomKey>
       <h3>Add Purchased items to list...</h3>
-      <AddToDoList></AddToDoList>
+      <AddToDoList onNewItem={handleAddNewItems}></AddToDoList>
       <ToDoItemsList todoItems={addTodoitem} />
       <CurrentTime></CurrentTime>
       <SearchItems handleDownEvent={handleEvent}></SearchItems>
