@@ -1,4 +1,4 @@
-function ToDoItem({todoName, todoDate}) {
+function ToDoItem({todoName, todoDate, onDelteClick1}) {
   const deleteRowItem = ()=>{
     let answer = prompt("Do you want to delete item");
     if(answer.toLowerCase ==='yes'){
@@ -14,7 +14,7 @@ function ToDoItem({todoName, todoDate}) {
       <div className="col-lg-6">{todoName}</div>
       <div className="col-lg-4">{todoDate}</div>
       <div className="col-lg-2">
-        <button type="button" className="btn btn-danger" onClick={deleteRowItem}>Delete</button>
+        <button type="button" className="btn btn-danger" onClick={()=> onDelteClick1(todoName)}>Delete</button>
       </div>
     </div>
   </>
