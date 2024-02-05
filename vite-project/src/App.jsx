@@ -39,13 +39,16 @@ const initialToDoItems = [
 ];
 const [addTodoitem, setAddTodoTem] = useState([]);
 const handleAddNewItems = (a, b) =>{
-  alert(`${a}, ${b}`);
-  const newCreatedArray = [...initialToDoItems, {pName:a, pDate:b}];
+ // alert(`${a}, ${b}`);
+  const newCreatedArray = [...addTodoitem, {pName:a, pDate:b}];
   setAddTodoTem(newCreatedArray);
 }
 
 const deleteItems = (itemName)=>{
-console.log(itemName)
+  debugger;
+const newItemAfterDleted =addTodoitem.filter((item)=> item.pName !==itemName);
+setAddTodoTem(newItemAfterDleted);
+alert("deleted");
 }
   return (
     <>
