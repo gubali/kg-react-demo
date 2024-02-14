@@ -1,8 +1,8 @@
 import { useState } from "react";
-
+import { IoMdAdd } from "react-icons/io";
 function AddToDoList({onNewItem}) {
-  let [addProducttoList, setProducttoList] = useState();
-  let [addDateToList, setDateToList] = useState();
+  let [addProducttoList, setProducttoList] = useState("");
+  let [addDateToList, setDateToList] = useState("");
   const handleNameChange = (event)=>{
     setProducttoList(event.target.value);
   }
@@ -38,7 +38,7 @@ function AddToDoList({onNewItem}) {
         </div>
         <div className="col-lg-2">
           <button type="button" className="mt-2 btn btn-primary mb-3" onClick={handleAddButtonEvent}>
-            Add to list
+          <IoMdAdd />
           </button>
         </div>
       </form>

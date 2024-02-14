@@ -45,10 +45,10 @@ const handleAddNewItems = (a, b) =>{
 }
 
 const deleteItems = (itemName)=>{
-  debugger;
+  
 const newItemAfterDleted =addTodoitem.filter((item)=> item.pName !==itemName);
 setAddTodoTem(newItemAfterDleted);
-alert("deleted");
+
 }
   return (
     <>
