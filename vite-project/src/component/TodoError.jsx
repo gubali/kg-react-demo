@@ -1,6 +1,6 @@
-const  TodoError = ()=>{
+const  TodoError = ({addTodoitem})=>{
   return (
-    <h4 className="text-danger">Enjoy your Time!!!</h4>
+    addTodoitem.length === 0 && <h4 className="text-danger">Enjoy your Time!!!</h4>
   )
 }
 export default TodoError

@@ -12,6 +12,7 @@ import SearchItems from './component/SearchItems'
 import { useState } from "react";
 import TodoError from "./component/TodoError";
 import FormInputControls from './component/FormInput'
+import toDoItemContext from './store/Todo-Item-store'
 function App() {
   // let foodItems = ["Dal", "Pulse", "Green Pea", "Salad"];
   const heading = "Welcome to React App";
@@ -23,66 +24,70 @@ function App() {
   let [textDispaly1, stateMethod1] = useState('Destructure way: Welcome to food Cafe!');
   let [stateFoodList, setFoodList] = useState(["Paratha", "Dal", "Pulse"])
   let flag = true;
-  const handleEvent = (event)=>{
-    if(event.key ==='Enter'){
+  const handleEvent = (event) => {
+    if (event.key === 'Enter') {
       let newFodItems = event.target.value;
       setFoodList([...stateFoodList, newFodItems]); //spread operator
       newFodItems = null;
-     //alert(newFodItems);
+      //alert(newFodItems);
     }
     //alert(event.target.value);
     stateMethod1(event.target.value);
-}
-const initialToDoItems = [
-  // { pName: "Milk12", pDate: "12/12/2024" },
-  // { pName: "Egg12", pDate: "10/12/2024" },
-  // { pName: "Parle", pDate: "12/2/2021" }
-];
-const [addTodoitem, setAddTodoTem] = useState([]);
-const handleAddNewItems = (a, b) =>{
-  // const newCreatedArray = [...addTodoitem, {pName:a, pDate:b}];
-  // setAddTodoTem(newCreatedArray);
-  setAddTodoTem((currentValue)=>[...currentValue, {pName:a, pDate:b}]); // called as functional update
-}
-
-const deleteItems = (itemName)=>{
-  let actionAns = confirm(`Do you wan to delte this item ${itemName}`);
-  if(actionAns){
-    const newItemAfterDleted =addTodoitem.filter((item)=> item.pName !==itemName);
-    alert(`Item has been deleted!`)
-    setAddTodoTem(newItemAfterDleted);
   }
-// const newItemAfterDleted =addTodoitem.filter((item)=> item.pName !==itemName);
-// setAddTodoTem(newItemAfterDleted);
+  const initialToDoItems = [
+    // { pName: "Milk12", pDate: "12/12/2024" },
+    // { pName: "Egg12", pDate: "10/12/2024" },
+    // { pName: "Parle", pDate: "12/2/2021" }
+  ];
+  const [addTodoitem, setAddTodoTem] = useState([]);
+  const handleAddNewItems = (a, b) => {
+    // const newCreatedArray = [...addTodoitem, {pName:a, pDate:b}];
+    // setAddTodoTem(newCreatedArray);
+    setAddTodoTem((currentValue) => [...currentValue, { pName: a, pDate: b }]); // called as functional update
+  }
 
-}
+  const deleteItems = (itemName) => {
+    let actionAns = confirm(`Do you wan to delte this item ${itemName}`);
+    if (actionAns) {
+      const newItemAfterDleted = addTodoitem.filter((item) => item.pName !== itemName);
+      alert(`Item has been deleted!`)
+      setAddTodoTem(newItemAfterDleted);
+    }
+    // const newItemAfterDleted =addTodoitem.filter((item)=> item.pName !==itemName);
+    // setAddTodoTem(newItemAfterDleted);
+
+  }
+  const defaultToDoContextItem = [{ pName: 'Buy Biscuit', pDate: 'Today' }]
   return (
     <>
-    <Container>
-      {/* <h2>Welcome first React App!</h2> */}
-      <Header headingText={heading}></Header>
-      <KgButton></KgButton>
-      <Hello></Hello>
-      
-      <RandomKey></RandomKey>
-      <h3>Add Purchased items to list...</h3>
-      <AddToDoList onNewItem={handleAddNewItems} />
-      {addTodoitem.length === 0  && <TodoError></TodoError>}
-      <ToDoItemsList todoItems={addTodoitem} onDelteClick={deleteItems} />
-      <CurrentTime></CurrentTime>
-      <SearchItems handleDownEvent={handleEvent}></SearchItems>
-      {textDispaly1}
-      {flag === true ?  <FoodItems items={stateFoodList}></FoodItems> :  'Resource not found!'}
-      {/* <FoodItems items={foodItems}></FoodItems> */}
-      <MiniCalculator></MiniCalculator>
+      <Container>
+        <toDoItemContext.Provider value={[defaultToDoContextItem]}>
+          {/* <h2>Welcome first React App!</h2> */}
+          <Header headingText={heading}></Header>
+          <KgButton></KgButton>
+          <Hello></Hello>
+
+          <RandomKey></RandomKey>
+          <h3>Add Purchased items to list...</h3>
+          <AddToDoList onNewItem={handleAddNewItems} />
+          {/* {addTodoitem.length === 0  && <TodoError></TodoError>} */}
+          <TodoError addTodoitem={addTodoitem}></TodoError>
+          <ToDoItemsList todoItems={addTodoitem} onDelteClick={deleteItems} />
+          <CurrentTime></CurrentTime>
+          <SearchItems handleDownEvent={handleEvent}></SearchItems>
+          {textDispaly1}
+          {flag === true ? <FoodItems items={stateFoodList}></FoodItems> : 'Resource not found!'}
+          {/* <FoodItems items={foodItems}></FoodItems> */}
+          <MiniCalculator></MiniCalculator>
+          <hr />
+          <FormInputControls></FormInputControls>
+        </toDoItemContext.Provider>
+      </Container>
       <hr />
-      <FormInputControls></FormInputControls>
-</Container>
-<hr />
-{/* <Container>
+      {/* <Container>
   <p>Testing the container, loreipsum doller amet set</p>
 </Container> */}
-      </>
+    </>
   );
 }
 
