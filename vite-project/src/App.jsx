@@ -11,6 +11,7 @@ import Container from "./component/Container";
 import SearchItems from './component/SearchItems'
 import { useState } from "react";
 import TodoError from "./component/TodoError";
+import FormInputControls from './component/FormInput'
 function App() {
   // let foodItems = ["Dal", "Pulse", "Green Pea", "Salad"];
   const heading = "Welcome to React App";
@@ -39,15 +40,20 @@ const initialToDoItems = [
 ];
 const [addTodoitem, setAddTodoTem] = useState([]);
 const handleAddNewItems = (a, b) =>{
- // alert(`${a}, ${b}`);
-  const newCreatedArray = [...addTodoitem, {pName:a, pDate:b}];
-  setAddTodoTem(newCreatedArray);
+  // const newCreatedArray = [...addTodoitem, {pName:a, pDate:b}];
+  // setAddTodoTem(newCreatedArray);
+  setAddTodoTem((currentValue)=>[...currentValue, {pName:a, pDate:b}]); // called as functional update
 }
 
 const deleteItems = (itemName)=>{
-  
-const newItemAfterDleted =addTodoitem.filter((item)=> item.pName !==itemName);
-setAddTodoTem(newItemAfterDleted);
+  let actionAns = confirm(`Do you wan to delte this item ${itemName}`);
+  if(actionAns){
+    const newItemAfterDleted =addTodoitem.filter((item)=> item.pName !==itemName);
+    alert(`Item has been deleted!`)
+    setAddTodoTem(newItemAfterDleted);
+  }
+// const newItemAfterDleted =addTodoitem.filter((item)=> item.pName !==itemName);
+// setAddTodoTem(newItemAfterDleted);
 
 }
   return (
@@ -70,6 +76,7 @@ setAddTodoTem(newItemAfterDleted);
       {/* <FoodItems items={foodItems}></FoodItems> */}
       <MiniCalculator></MiniCalculator>
       <hr />
+      <FormInputControls></FormInputControls>
 </Container>
 <hr />
 {/* <Container>
