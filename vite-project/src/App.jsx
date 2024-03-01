@@ -9,10 +9,13 @@ import Header from "./component/Header";
 import MiniCalculator from "./component/MiniCalculator";
 import Container from "./component/Container";
 import SearchItems from './component/SearchItems'
-import { useState } from "react";
+import { useState } from "react";    
 import TodoError from "./component/TodoError";
 import FormInputControls from './component/FormInput'
-import toDoItemContext from './store/Todo-Item-store'
+import ToDoItemContext from './store/Todo-Item-store'
+
+/***857 vdo length */
+
 function App() {
   // let foodItems = ["Dal", "Pulse", "Green Pea", "Salad"];
   const heading = "Welcome to React App";
@@ -57,11 +60,17 @@ function App() {
     // setAddTodoTem(newItemAfterDleted);
 
   }
-  const defaultToDoContextItem = [{ pName: 'Buy Biscuit', pDate: 'Today' }]
+  const defaultToDoContextItem = [
+    { pName: 'Buy Biscuit', pDate: 'Today' }
+  ] 
   return (
     <>
       <Container>
-        <toDoItemContext.Provider value={[defaultToDoContextItem]}>
+        <ToDoItemContext.Provider value={{
+          addTodoitem,
+          handleAddNewItems,
+          deleteItems
+        }}>
           {/* <h2>Welcome first React App!</h2> */}
           <Header headingText={heading}></Header>
           <KgButton></KgButton>
@@ -69,10 +78,10 @@ function App() {
 
           <RandomKey></RandomKey>
           <h3>Add Purchased items to list...</h3>
-          <AddToDoList onNewItem={handleAddNewItems} />
+          <AddToDoList />
           {/* {addTodoitem.length === 0  && <TodoError></TodoError>} */}
-          <TodoError addTodoitem={addTodoitem}></TodoError>
-          <ToDoItemsList todoItems={addTodoitem} onDelteClick={deleteItems} />
+          <TodoError></TodoError>
+          <ToDoItemsList />
           <CurrentTime></CurrentTime>
           <SearchItems handleDownEvent={handleEvent}></SearchItems>
           {textDispaly1}
@@ -81,7 +90,7 @@ function App() {
           <MiniCalculator></MiniCalculator>
           <hr />
           <FormInputControls></FormInputControls>
-        </toDoItemContext.Provider>
+        </ToDoItemContext.Provider>
       </Container>
       <hr />
       {/* <Container>

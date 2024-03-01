@@ -1,13 +1,14 @@
 import { useContext } from "react";
-import { toDoItemContext } from "../store/Todo-Item-store";
+import { ToDoItemContext } from "../store/Todo-Item-store";
 import ToDoItem from "./ToDoItem";
-const ToDoItemsList = ({ todoItems, onDelteClick }) => {
-  let toDoItemFromContext = useContext(toDoItemContext)
-  console.log(toDoItemFromContext);
+const ToDoItemsList = ({onDelteClick }) => {
+  let {addTodoitem} = useContext(ToDoItemContext); // API context
+  //let toDoItems = toDoItemObj.addTodoitem;
+  //console.log(toDoItems)
 
   return (
     <>
-      {todoItems.map((item) => (
+      {addTodoitem.map((item) => (  // chnage to api context format
         <ToDoItem todoName={item.pName} key={item.pName} todoDate={item.pDate} onDelteClick1={onDelteClick}></ToDoItem>
       ))}
     </>

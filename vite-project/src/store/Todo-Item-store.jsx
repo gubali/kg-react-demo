@@ -1,4 +1,4 @@
 import { createContext } from "react";
-export const toDoItemContext = createContext([]);
+export const ToDoItemContext = createContext([]);
 
-export default toDoItemContext;
+export default ToDoItemContext;

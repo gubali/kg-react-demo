@@ -1,7 +1,10 @@
-import { useState } from "react";
-
+import { useContext, useState } from "react";
+import {ToDoItemContext} from '../store/Todo-Item-store'
 let MiniCalculator = () => {
-  let [getCalInputText, setCalInputText] = useState("")
+  let [getCalInputText, setCalInputText] = useState("");
+  const toDoTemContextInMiniCal = useContext(ToDoItemContext);
+  // let ab = toDoTemContextInMiniCal.map((elem)=> <p key={elem.pName}>{elem.pName} {elem.pDate}</p>);
+
   const btnList = [
     'C',
     '1',
@@ -56,6 +59,8 @@ let MiniCalculator = () => {
         </div>
         <div className="col-lg-2 col-xs-2"></div>
       </div>
+      {/* help of context api getting data from do item to calculater  */}
+      
     </div>
   )
 }
