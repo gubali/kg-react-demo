@@ -1,8 +1,9 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { IoMdAdd } from "react-icons/io";
-function AddToDoList({ onNewItem }) {
+import ToDoItemContext from "../store/Todo-Item-store";
+function AddToDoList() {
 //get method with help of context api provider
-
+ const {handleAddNewItems} = useContext(ToDoItemContext);
 
   let [addProducttoList, setProducttoList] = useState("");
   let [addDateToList, setDateToList] = useState("");
@@ -34,7 +35,7 @@ function AddToDoList({ onNewItem }) {
     const addProducttoList = todoProductName.current.value;
     const addDateToList = todoProductPurchasedDate.current.value;
     console.log(`${addProducttoList} - ${addDateToList}`)
-    onNewItem(addProducttoList, addDateToList);
+    handleAddNewItems(addProducttoList, addDateToList);
     todoProductName.current.value = '';
     todoProductPurchasedDate.current.value = '';
   }
